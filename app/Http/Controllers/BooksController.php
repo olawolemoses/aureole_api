@@ -98,6 +98,6 @@ class BooksController extends ApiController
         $book = Book::find($id);
         $message = "The book {$book->name} was deleted successfully";
         $book->delete();
-        return $this->setMessage($message)->respondWithMessage([]); 
+        return $this->setStatusCode(204)->setMessage($message)->respondWithMessage([]); 
     }    
 }

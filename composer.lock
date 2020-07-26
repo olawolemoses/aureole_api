@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12b15273a8cc3c544f350e4e0db612c1",
+    "content-hash": "0575ad646e02645182d0056fbfdac526",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4748,6 +4748,107 @@
                 "codeception"
             ],
             "time": "2020-04-20T07:26:11+00:00"
+        },
+        {
+            "name": "codeception/module-db",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Codeception/module-db.git",
+                "reference": "13a2b86206d09c50ab2e5375b261df35b650e58f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Codeception/module-db/zipball/13a2b86206d09c50ab2e5375b261df35b650e58f",
+                "reference": "13a2b86206d09c50ab2e5375b261df35b650e58f",
+                "shasum": ""
+            },
+            "require": {
+                "codeception/codeception": "*@dev",
+                "php": ">=5.6.0 <8.0"
+            },
+            "conflict": {
+                "codeception/codeception": "<4.0"
+            },
+            "require-dev": {
+                "codeception/util-robohelpers": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Bodnarchuk"
+                },
+                {
+                    "name": "Gintautas Miselis"
+                }
+            ],
+            "description": "WebDriver module for Codeception",
+            "homepage": "http://codeception.com/",
+            "keywords": [
+                "acceptance-testing",
+                "browser-testing",
+                "codeception"
+            ],
+            "time": "2019-12-08T17:56:49+00:00"
+        },
+        {
+            "name": "codeception/module-laravel5",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Codeception/module-laravel5.git",
+                "reference": "419c382fde8a6b2110001fa0a206ec4cdb77c6d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Codeception/module-laravel5/zipball/419c382fde8a6b2110001fa0a206ec4cdb77c6d4",
+                "reference": "419c382fde8a6b2110001fa0a206ec4cdb77c6d4",
+                "shasum": ""
+            },
+            "require": {
+                "codeception/codeception": "^4.0",
+                "codeception/lib-innerbrowser": "^1.0",
+                "php": ">=5.6.0 <8.0"
+            },
+            "require-dev": {
+                "codeception/module-asserts": "^1.0",
+                "codeception/module-rest": "^1.0",
+                "codeception/util-robohelpers": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan-Henk Gerritsen"
+                },
+                {
+                    "name": "Michael Bodnarchuk"
+                }
+            ],
+            "description": "Codeception module for Laravel 5 framework",
+            "homepage": "http://codeception.com/",
+            "keywords": [
+                "codeception",
+                "laravel5"
+            ],
+            "time": "2020-03-28T14:59:53+00:00"
         },
         {
             "name": "codeception/module-phpbrowser",

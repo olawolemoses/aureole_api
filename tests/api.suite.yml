@@ -1,7 +1,12 @@
 actor: ApiTester
 modules:
     enabled:
+        - Laravel5:
+            part: ORM
+            environment_file: .env.testing
+            cleanup: true
+            run_database_migrations: true        
         - REST:
-            url: http://serviceapp/api/v1/
+            url: http://localhost:8000/api/v1/books/
             depends: PhpBrowser
             part: Json
