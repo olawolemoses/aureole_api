@@ -73,6 +73,11 @@ class BooksController extends ApiController
 
     public function update(Request $request, $id)
     {      
+        $book = Book::find($id);
+        
+        if(is_null($book)) {
+            return $this->responseNotFound('Book Not Found');
+        }
 
         $updated_at = date('Y-m-d H:i:s');
         
@@ -82,8 +87,6 @@ class BooksController extends ApiController
 
         if($request->has('authors'))
             $data_array['authors'] = json_encode($data_array['authors']);
-
-        $book = Book::find($id);
 
         $book->update($data_array);
 
@@ -96,8 +99,14 @@ class BooksController extends ApiController
     public function destroy($id)
     {
         $book = Book::find($id);
-        $message = "The book {$book->name} was deleted successfully";
+        
+        if(is_null($book)) {
+            return $this->responseNotFound('Book Not Found');
+        }
+
+        $message = "The book " . $book->name . " was deleted successfully";
         $book->delete();
-        return $this->setStatusCode(204)->setMessage($message)->respondWithMessage([]); 
+
+        return $this->setStatusCode(200)->setMessage($message)->respondWithMessage([]); 
     }    
 }

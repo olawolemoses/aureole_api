@@ -44,14 +44,18 @@ class ApiController extends Controller
             "status_code" => $this->getStatusCode(),
             "status" => $this->getStatus(),
             "error" => [
-                "message" => $message,
-                
+                "message" => $message
             ]
         ]);
     }
 
     public function respondWithCreateSuccess($data) {
         return $this->setStatusCode(201)->respondSuccess($data);
+    }
+
+    public function respondWithDeleteSuccess($message) {
+        $data = [];
+        return $this->setStatusCode(204)->respondSuccess($data);
     }
 
     public function respondSuccess($data, $headers = []) {
@@ -68,11 +72,10 @@ class ApiController extends Controller
             "status" => $this->getStatus(),
             "message" => $this->getMessage(),
             "data" => $data
-        ]);        
-    }    
+        ]);
+    }
 
     public function respond($data, $headers = []) {
-
         return response()->json($data, $this->getStatusCode(), $headers);
     }
 } 

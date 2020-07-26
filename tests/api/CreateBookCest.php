@@ -16,8 +16,8 @@ class CreateBookCest
     {
     }
 
-    private function makeBook($bookFields = []){
-        $book = array_merge([                                                         
+    public function makeBook($bookFields = []){
+        $book = array_merge([                                                  
           'name' => $this->faker->title,
           'isbn' => $this->faker->randomNumber(),
           'authors' => json_encode([$this->faker->name]),
@@ -27,7 +27,8 @@ class CreateBookCest
           'release_date' => date("Y-m-d h:i:s")
         ], $bookFields);
 
-        return Book::create($book);
+        $book = Book::create($book);
+        return $book->toArray();
     }
 
     // tests
@@ -65,8 +66,7 @@ class CreateBookCest
     public function tryToUpdate(ApiTester $I)
     {
         $book = $this->makeBook();
-        $I->haveHttpHeader('Content-Type', 'application/x-www-form-urlencoded');
-        $I->sendPatch('/' . $book->id, [
+        $I->sendPatch('/' . $book['id'], [
           'country' => 'Nigeria',
         ]);
         $I->seeResponseCodeIs(200);
@@ -77,11 +77,8 @@ class CreateBookCest
     public function tryToDelete(ApiTester $I)
     {
         $book = $this->makeBook();
-        $I->haveHttpHeader('Content-Type', 'application/x-www-form-urlencoded');
-        $I->sendDelete('/' . $book->id, [
-          'country' => 'Nigeria',
-        ]);
-        $I->seeResponseCodeIs(204);
+        $I->sendDelete('/' . $book['id']);
+        $I->seeResponseCodeIs(200);
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson(array('status_code' => 200));   
     }    
