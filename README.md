@@ -1,6 +1,6 @@
 ## About Business Classic Directory Service
 
-* The application shows an approach to build a Laravel API to provide access to CRUD operations for a books storage. 
+* The application shows an approach to build a Laravel API to provide access to CRUD operations for books storage. 
 
 * It also shows how to access an external api within the laravel application. 
 
