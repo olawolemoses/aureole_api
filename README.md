@@ -66,3 +66,11 @@ PATCH http://localhost:8000/api/v1/books/:id
 DELETE http://localhost:8000/api/v1/books/:id
 SHOW http://localhost:8000/api/v1/books/:id
 ```
+
+YTo run Tests:
+
+
+```sh
+Tests
+php vendor/bin/codecept run tests/api/CreateBookCest.php
+```
