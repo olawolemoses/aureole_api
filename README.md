@@ -58,7 +58,7 @@ You're ready to go! Access Postman:
 
 
 ```sh
-Routes
+Routes:
 http://localhost:8000/api/external-books
 POST http://localhost:8000/api/v1/books
 GET http://localhost:8000/api/v1/books
@@ -67,10 +67,11 @@ DELETE http://localhost:8000/api/v1/books/:id
 SHOW http://localhost:8000/api/v1/books/:id
 ```
 
-YTo run Tests:
+To run Tests:
 
 
 ```sh
-Tests
+Tests:
+php vendor/bin/codecept build
 php vendor/bin/codecept run tests/api/CreateBookCest.php
 ```
