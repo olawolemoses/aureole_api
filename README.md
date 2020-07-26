@@ -1,41 +1,29 @@
 ## About Business Classic Directory Service
 
-* The application is an approach to build a Larael API to provide access to CRUD operations for a books storage. 
+* The application shows an approach to build a Laravel API to provide access to CRUD operations for a books storage. 
 
-* The backend apis was built with Laravel. 
+* It also shows how to access an external api within the laravel application. 
 
 * Tests was write in PHP Codeception. 
 
 ## Environment Setup
 
 ```
-php 7.4.6
+php 7.2.5
 apache 2.4
 mysql 5.7
 ```
 
 ## Project Setup
 ```sh
-git clone https://github.com/olawolemoses/classic-business-directory-service-backend.git cbdsb
-cd cbdsb
+git clone https://github.com/olawolemoses/aureole_api.git aurole_api
+cd aurole_api
 ```
 
 Install PHP dependencies:
 
 ```sh
 composer install
-```
-
-Install NPM dependencies:
-
-```sh
-npm install
-```
-
-Build assets:
-
-```sh
-npm run dev
 ```
 
 Setup configuration:
@@ -53,7 +41,11 @@ php artisan key:generate
 Setup a (MySQL, Postgres), database accordingly & Run database migrations:
 
 ```sh
-php artisan migrate:refresh --seed
+create database `aurole_db`
+```
+
+```sh
+php artisan migrate:refresh
 ```
 
 Run the dev server (the output will give the address):
@@ -62,7 +54,15 @@ Run the dev server (the output will give the address):
 php artisan serve
 ```
 
-You're ready to go! Login with:
+You're ready to go! Access Postman:
 
-- **Username:** simpleadmin@inits.com
-- **Password:** 123456
+
+```sh
+Routes
+http://localhost:8000/api/external-books
+POST http://localhost:8000/api/v1/books
+GET http://localhost:8000/api/v1/books
+PATCH http://localhost:8000/api/v1/books/:id
+DELETE http://localhost:8000/api/v1/books/:id
+SHOW http://localhost:8000/api/v1/books/:id
+```
